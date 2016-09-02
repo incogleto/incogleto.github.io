@@ -10,6 +10,8 @@ main.prototype = {
 
     preload: function() {
 
+        game.scale.scalemode = Phaser.ScaleManager.SHOW_ALL;
+
         this.game.load.image('grey', 'assets/runeGrey.png');
         this.game.load.image('green', 'assets/runeGreen.png');
         this.game.load.image('red', 'assets/runeRed.png');
