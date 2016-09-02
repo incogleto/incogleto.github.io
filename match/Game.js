@@ -10,7 +10,9 @@ main.prototype = {
 
     preload: function() {
 
-        this.game.stage.scale.startFullScreen();
+        //this.game.scale.scalemode = Phaser.ScaleManager.EXACT_FIT;
+        //this.game.stage.scale.refresh();
+        this.game.scale.startFullScreen();
 
         this.game.load.image('grey', 'assets/runeGrey.png');
         this.game.load.image('green', 'assets/runeGreen.png');
