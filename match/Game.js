@@ -11,7 +11,7 @@ main.prototype = {
     preload: function() {
 
         this.game.scale.scalemode = Phaser.ScaleManager.EXACT_FIT;
-        game.stage.scale.refresh();
+        this.game.stage.scale.refresh();
 
         this.game.load.image('grey', 'assets/runeGrey.png');
         this.game.load.image('green', 'assets/runeGreen.png');
