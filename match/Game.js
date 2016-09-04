@@ -41,6 +41,19 @@ main.prototype = {
             //this.scale.setScreenSize(true);
         }
 
+        var ow = parseInt(this.game.canvas.style.width, 10);
+        var oh = parseInt(this.game.canvas.style.height, 10);
+        var r = Math.max(window.innerWidth / ow, window.innerHeight / oh);
+        var nw = ow * r;
+        var nh = oh * r;
+        this.game.canvas.style.width = nw + "px";
+        this.game.canvas.style.height = nh + "px";
+        this.game.canvas.style.marginLeft = (window.innerWidth / 2 - nw / 2) + "px";
+        this.game.canvas.style.marginTop = (window.innerHeight / 2 - nh / 2) + "px";
+        document.getElementById("game").style.width = window.innerWidth + "px";
+        document.getElementById("game").style.height = window.innerHeight - 1 + "px"; //The css for body includes 1px top margin, I believe this is the cause for this -1
+        document.getElementById("game").style.overflow = "hidden";
+
     },
 
     create: function() {
