@@ -9,16 +9,37 @@ main.prototype = {
     //this.game.scale.refresh();
 
     preload: function() {
-
-        //this.game.scale.scalemode = Phaser.ScaleManager.EXACT_FIT;
-        //this.game.stage.scale.refresh();
-        this.game.scale.startFullScreen();
-
         this.game.load.image('grey', 'assets/runeGrey.png');
         this.game.load.image('green', 'assets/runeGreen.png');
         this.game.load.image('red', 'assets/runeRed.png');
         this.game.load.image('yellow', 'assets/runeYellow.png');
         this.game.load.image('purple', 'assets/runePurple.png');
+        this.game.load.image('dot', 'assets/dot.png');
+
+        
+        if (this.game.device.desktop) {
+            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            this.scale.minWidth = this.gameWidth / 2;
+            this.scale.minHeight = this.gameHeight / 2;
+            this.scale.maxWidth = this.gameWidth;
+            this.scale.maxHeight = this.gameHeight;
+            this.scale.pageAlignHorizontally = true;
+            this.scale.pageAlignVertically = true;
+            //this.scale.setScreenSize(true);
+        } else {
+            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            this.scale.minWidth = this.gameWidth / 2;
+            this.scale.minHeight = this.gameHeight / 2;
+            this.scale.maxWidth = 2048; //You can change this to gameWidth*2.5 if needed            
+            this.scale.maxHeight = 1228; //Make sure these values are proportional to the gameWidth and gameHeight            
+            this.scale.pageAlignHorizontally = true;
+            this.scale.pageAlignVertically = true;
+            this.scale.forceOrientation(true, false);
+            this.scale.hasResized.add(this.gameResized, this);
+            this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
+            this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
+            this.scale.setScreenSize(true);
+        }
 
     },
 
@@ -65,6 +86,7 @@ main.prototype = {
 
         this.tiles = this.game.add.group();
         this.fadeTiles = this.game.add.group();
+        this.dots = this.game.add.group();
 
 
         var seed = Date.now();
@@ -83,6 +105,7 @@ main.prototype = {
         //point bar
         this.pointBarProgress = 0;
         this.pointBarGoal = 100;
+        this.pointBarAdd = 0;
 
         this.pointBar = this.add.bitmapData(20, 480);
         this.points = this.game.add.sprite(0, this.game.height, this.pointBar);
@@ -107,11 +130,11 @@ main.prototype = {
         }
 
         //point Bar
-        this.pointBar.context.clearRect(0,0, this.pointBar.width, this.pointBar.height);
+        this.pointBar.context.clearRect(0, 0, this.pointBar.width, this.pointBar.height);
 
         this.pointBar.context.fillStyle = '#f00';
 
-        this.pointBar.context.fillRect(0,0, 20, this.pointBarProgress * 4.8);
+        this.pointBar.context.fillRect(0, 0, 20, this.pointBarProgress * 4.8);
 
         this.pointBar.dirty = true;
 
@@ -356,6 +379,9 @@ main.prototype = {
             this.game.time.events.add(600, function() {
                 me.checkMatch();
             });
+
+            this.game.add.tween(this).to({ pointBarProgress: this.pointBarProgress + this.pointBarAdd }, 500, Phaser.Easing.Linear.In, true);
+            this.pointBarAdd = 0;
         }
 
 
@@ -387,10 +413,13 @@ main.prototype = {
                     me.fadeTiles.remove(tileFade);
                 });
 
+                this.scoreDots(tile.x, tile.y);
+
                 //Remove the tile from the screen
                 me.tiles.remove(tile);
 
-                this.pointBarProgress++;
+                this.pointBarAdd++;
+
 
                 //Remove the tile from the theoretical grid
                 if (tilePos.x != -1 && tilePos.y != -1) {
@@ -454,6 +483,18 @@ main.prototype = {
 
         this.activeTile1 = null;
         this.activeTile2 = null;
+    },
+
+    scoreDots: function(x, y) {
+        var me = this;
+
+        var dot = this.dots.create(x - this.tileWidth / 2, y - this.tileHeight / 2, 'dot');
+
+        var tween = this.game.add.tween(dot).to({ x: 0, y: 480 }, 400, Phaser.Easing.Linear.In, true);
+
+        tween.onComplete.add(function() {
+            me.dots.remove(dot);
+        });
     }
 
 }

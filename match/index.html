@@ -1,20 +1,26 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>hello phaser!</title>
-        <script src="./phaser.min.js"></script>
-        <script type="text/javascript" src="./Game.js"></script>
-    </head>
-    <body>
-        <script type="text/javascript">
-            (function(){
-                var game = new Phaser.Game(320, 480, Phaser.AUTO);
 
-                game.state.add("main", main);
+<head>
+    <meta charset="UTF-8" />
+    <title>hello phaser!</title>
+    <script src="phaser.min.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+</head>
 
-                game.state.start("main");
-            })();
-        </script>
-    </body>
+<body>
+    <script type="text/javascript">
+    (function() {
+        var gameWidth = 320;
+        var gameHeight = 480;
+
+        var game = new Phaser.Game(gameWidth, gameHeight, Phaser.AUTO);
+
+        game.state.add("main", main);
+
+        game.state.start("main");
+    })();
+    </script>
+</body>
+
 </html>
