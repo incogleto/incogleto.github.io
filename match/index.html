@@ -9,13 +9,13 @@
 </head>
 
 <body>
-    <div id="game"></div>
+
     <script type="text/javascript">
     (function() {
         var gameWidth = 320;
         var gameHeight = 480;
 
-        var game = new Phaser.Game(gameWidth, gameHeight, Phaser.AUTO, 'game');
+        var game = new Phaser.Game(gameWidth, gameHeight, Phaser.AUTO);
 
         game.state.add("main", main);
 
