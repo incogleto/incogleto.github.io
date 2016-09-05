@@ -30,8 +30,8 @@ main.prototype = {
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             this.scale.minWidth = this.gameWidth / 2;
             this.scale.minHeight = this.gameHeight / 2;
-            this.scale.maxWidth = gameWidth; //You can change this to gameWidth*2.5 if needed            
-            this.scale.maxHeight = gameHeight; //Make sure these values are proportional to the gameWidth and gameHeight            
+            this.scale.maxWidth = this.gameWidth; //You can change this to gameWidth*2.5 if needed            
+            this.scale.maxHeight = this.gameHeight; //Make sure these values are proportional to the gameWidth and gameHeight            
             this.scale.pageAlignHorizontally = true;
             this.scale.pageAlignVertically = true;
             this.scale.forceOrientation(true, false);
