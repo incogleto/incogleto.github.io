@@ -17,16 +17,16 @@ main.prototype = {
         this.game.load.image('dot', 'assets/dot.png');
 
 
-        if (this.game.device.desktop) {
-            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-            this.scale.minWidth = this.gameWidth / 2;
-            this.scale.minHeight = this.gameHeight / 2;
-            this.scale.maxWidth = this.gameWidth;
-            this.scale.maxHeight = this.gameHeight;
-            this.scale.pageAlignHorizontally = true;
-            this.scale.pageAlignVertically = true;
+        //if (this.game.device.desktop) {
+            //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            //this.scale.minWidth = this.gameWidth / 2;
+            //this.scale.minHeight = this.gameHeight / 2;
+            //this.scale.maxWidth = this.gameWidth;
+            //this.scale.maxHeight = this.gameHeight;
+            //this.scale.pageAlignHorizontally = true;
+            //this.scale.pageAlignVertically = true;
             //this.scale.setScreenSize(true);
-        } else {
+        //} else {
             //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
             //this.scale.minWidth = this.gameWidth / 2;
             //this.scale.minHeight = this.gameHeight / 2;
@@ -276,7 +276,7 @@ main.prototype = {
 
         tile.scale.setTo(1.1);
         this.swapTiles();
-        console.log(pls);
+        console.log('pls');
     },
 
     swapTiles: function() {
