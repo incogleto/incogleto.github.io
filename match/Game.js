@@ -39,7 +39,7 @@ main.prototype = {
             //this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
             //this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
             //this.scale.setScreenSize(true);
-        }
+        //}
 
         //var ow = parseInt(this.game.canvas.style.width, 10);
         //var oh = parseInt(this.game.canvas.style.height, 10);
