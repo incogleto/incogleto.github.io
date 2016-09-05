@@ -276,6 +276,7 @@ main.prototype = {
 
         tile.scale.setTo(1.1);
         this.swapTiles();
+        console.log(pls);
     },
 
     swapTiles: function() {
