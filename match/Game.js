@@ -27,14 +27,14 @@ main.prototype = {
             this.scale.pageAlignVertically = true;
             //this.scale.setScreenSize(true);
         } else {
-            this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-            this.scale.minWidth = this.gameWidth / 2;
-            this.scale.minHeight = this.gameHeight / 2;
-            this.scale.maxWidth = this.gameWidth; //You can change this to gameWidth*2.5 if needed            
-            this.scale.maxHeight = this.gameHeight; //Make sure these values are proportional to the gameWidth and gameHeight            
-            this.scale.pageAlignHorizontally = true;
-            this.scale.pageAlignVertically = true;
-            this.scale.forceOrientation(true, false);
+            //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            //this.scale.minWidth = this.gameWidth / 2;
+            //this.scale.minHeight = this.gameHeight / 2;
+            //this.scale.maxWidth = this.gameWidth; //You can change this to gameWidth*2.5 if needed            
+            //this.scale.maxHeight = this.gameHeight; //Make sure these values are proportional to the gameWidth and gameHeight            
+            //this.scale.pageAlignHorizontally = true;
+            //this.scale.pageAlignVertically = true;
+            //this.scale.forceOrientation(true, false);
             //this.scale.hasResized.add(this.gameResized, this);
             //this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
             //this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
