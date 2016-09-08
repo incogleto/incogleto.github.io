@@ -1,0 +1,12 @@
+#headline {
+    font-family: 'Bungee', cursive;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: url(../assets/background.png) repeat 0 0;
+}
+
+.jumbotron{
+	background: #FFF;
+}
