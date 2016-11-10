@@ -1,4 +1,4 @@
-#headline {
+#headline, #brand{
     font-family: 'Bungee', cursive;
 }
 
@@ -9,4 +9,8 @@ body {
 
 .jumbotron{
 	background: #FFF;
+}
+
+.navbar-default{
+	background-color: #FFF;
 }
