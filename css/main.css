@@ -488,6 +488,14 @@ Media Queries
         color: #1a1a1a;
         line-height: 50px;
     }
+
+    #tagline{
+      visibility: hidden;
+    }
+
+    #arrow{
+      font-size: 2em;
+    }
 }
 
 @media(min-width: 0px){
