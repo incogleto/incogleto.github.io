@@ -1,26 +1,4 @@
-$("#banner-text").addClass("load");
-
-$("#menuIcon").click(function(){
-	$(".small-nav").toggleClass("dropOpen");
-	console.log("click");
-})
-
-$('a[href*=\\#]').on('click', function(event){
-    event.preventDefault();
-    $('html,body').animate({scrollTop:$(this.hash).offset().top-70}, 500);
-});
-
-function collapseNavbar() {
-    if ($(".main-nav").offset().top > 100) {
-        $(".main-nav").addClass('scroll-nav');
-    } else {
-        $(".main-nav").removeClass('scroll-nav');
-    }
-}
-
-$(window).scroll(collapseNavbar);
-
-particles = {
+{
   "particles": {
     "number": {
       "value": 80,
@@ -93,11 +71,11 @@ particles = {
     "detect_on": "canvas",
     "events": {
       "onhover": {
-        "enable": false,
+        "enable": true,
         "mode": "grab"
       },
       "onclick": {
-        "enable": false,
+        "enable": true,
         "mode": "push"
       },
       "resize": true
@@ -130,16 +108,3 @@ particles = {
   },
   "retina_detect": true
 }
-
-particlesJS('particle-js', particles, function() {
-  console.log('callback - particles.js config loaded');
-});
-
-var options = [
-	{
-		selector: '#banner',
-		vh: 100
-	}
-]
-
-var vhFix = new VHChromeFix(options)
