@@ -39,10 +39,8 @@ highlight.classList.add('hl');
 highlight.classList.add('hidden');
 highlight.style.transform = `translateX(${leftBounds}px)`;
 document.body.append(highlight);
-console.log(leftBounds);
 
 function highlightNav(){
-	console.log('over');
 	highlight.classList.remove('hidden');
 	highlight.style.opacity = `100`;
 	const coords = this.getBoundingClientRect();

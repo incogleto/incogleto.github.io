@@ -226,10 +226,10 @@ Nav
 
 .hl {
   transition: all 0.2s;
-  border-bottom:2px solid red;
+  border-bottom:2px solid #E94132;
   position: fixed;
   top:0;
-  background: red;
+  background: #E94132;
   left:0;
   z-index: 3;
   display: block;
