@@ -97,6 +97,7 @@ textarea {
 body{
     background-image: url("../img/stardust.png");
     font-family: 'Roboto Slab', serif;
+    overflow-x: hidden
 }
 
 #particle-js {
@@ -253,12 +254,12 @@ Banner
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    -webkit-transition: all 1.5s ease-in;
-       -moz-transition: all 1.5s ease-in;
-        -ms-transition: all 1.5s ease-in;
-         -o-transition: all 1.5s ease-in;
-            transition: all 1.5s ease-in;
+    transform: translate(-50%, -50%) scale(.5);
+    -webkit-transition: all 1s cubic-bezier(0.28, 2.43, 0.58, 1);
+       -moz-transition: all 1s cubic-bezier(0.28, 2.43, 0.58, 1);
+        -ms-transition: all 1s cubic-bezier(0.28, 2.43, 0.58, 1);
+         -o-transition: all 1s cubic-bezier(0.28, 2.43, 0.58, 1);
+            transition: all 1s cubic-bezier(0.28, 2.43, 0.58, 1);
 }
 
 #see{
