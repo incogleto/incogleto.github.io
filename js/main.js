@@ -1,25 +1,75 @@
+//Animate banner-text
 $("#banner-text").addClass("load");
 
+//mobile nav
 $("#menuIcon").click(function(){
 	$(".small-nav").toggleClass("dropOpen");
-	console.log("click");
 })
 
+//scrollspy
 $('a[href*=\\#]').on('click', function(event){
     event.preventDefault();
     $('html,body').animate({scrollTop:$(this.hash).offset().top-70}, 500);
 });
 
+//resize nav on scroll
 function collapseNavbar() {
     if ($(".main-nav").offset().top > 100) {
         $(".main-nav").addClass('scroll-nav');
+				highlight.style.height = `52px`;
+				highlight.style.borderRadius = `0%`;
+				bottomBounds = 52;
     } else {
         $(".main-nav").removeClass('scroll-nav');
+				highlight.style.height = `70px`;
+				highlight.style.borderRadius = `0 0 30% 30%`;
+				bottomBounds = 72;
     }
 }
 
 $(window).scroll(collapseNavbar);
 
+
+//nav highlight
+const menuItems = document.querySelectorAll('.menuItems');
+const highlight = document.createElement('span');
+var leftBounds = menuItems.item(menuItems.length-1).getBoundingClientRect().left-10;
+var bottomBounds = 100;
+highlight.classList.add('hl');
+highlight.classList.add('hidden');
+highlight.style.transform = `translateX(${leftBounds}px)`;
+document.body.append(highlight);
+console.log(leftBounds);
+
+function highlightNav(){
+	console.log('over');
+	highlight.classList.remove('hidden');
+	highlight.style.opacity = `100`;
+	const coords = this.getBoundingClientRect();
+	const normalizedCoords = {
+		width: coords.width,
+		height: coords.height + 2,
+		top: 0,
+		left: coords.left + window.scrollX - 10
+	};
+
+	highlight.style.width = `${normalizedCoords.width}px`;
+	highlight.style.height = `${normalizedCoords.height}px`;
+	highlight.style.transform = `translate(${normalizedCoords.left}px, ${normalizedCoords.top}px)`;
+}
+
+function hideHighlight(e){
+	e = e || window.event;
+	if(e.clientY > bottomBounds || e.clientX < leftBounds)
+		highlight.style.opacity = `0`;
+	else
+		highlight.style.opacity = `100`;
+}
+
+menuItems.forEach(a => a.addEventListener('mouseenter', highlightNav));
+document.addEventListener('mousemove', hideHighlight);
+
+//banner particles
 particles = {
   "particles": {
     "number": {
@@ -142,4 +192,5 @@ var options = [
 	}
 ]
 
+//mobile vh fix
 var vhFix = new VHChromeFix(options)

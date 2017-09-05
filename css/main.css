@@ -109,6 +109,7 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  z-index: -999;
 }
 
 /***************************************************************************
@@ -209,7 +210,8 @@ Nav
 }
 
 .menuItems a{
-    margin-left: 35px
+    padding: 20px 0;
+
 }
 
 .scroll-nav{
@@ -220,6 +222,22 @@ Nav
 .scroll-nav a, .scroll-nav #nav-name, .scroll-nav .menuItems, .scroll-nav #menuIcon{
     color: #1a1a1a;
     line-height: 50px;
+}
+
+.hl {
+  transition: all 0.2s;
+  border-bottom:2px solid red;
+  position: fixed;
+  top:0;
+  background: red;
+  left:0;
+  z-index: 3;
+  display: block;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  height: 72px;
+  width: 45px;
+  padding: 0 10px;
+  border-radius: 0 0 30% 30%;
 }
 
 /***************************************************************************
