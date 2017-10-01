@@ -338,6 +338,11 @@ Projects
     color: #ed4e6e;
 }
 
+.cap-desc{
+    float: left;
+    max-width: 60%;
+}
+
 .box img{
     transition: transform 0.4s;
 }
@@ -351,6 +356,18 @@ Projects
     opacity: 1;
     transform: translateY(100%);
     transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.source{
+    float: right;
+    border: 1px solid #ed4e6e;
+    padding: 5px;
+    margin: auto;
+    line-height: 40px;
+}
+
+.source:hover{
+    background-color: #ed4e6e;
 }
 
 
@@ -523,7 +540,7 @@ Media Queries
     }
 }
 
-@media(min-width: 665px) and (max-width: 925px){
+@media(min-width: 750px) and (max-width: 925px){
     .box, .caption{
         width: 50%;
     }
