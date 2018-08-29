@@ -154,7 +154,7 @@ Nav
     text-align: center;
     color: #1a1a1a;
     padding: 0;
-    text-decoration: none
+    text-decoration: none;
     margin-right:5px;
     line-height: 70px;
     transition: line-height 0.4s;
@@ -272,12 +272,6 @@ Banner
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(.5);
-    -webkit-transition: all 1s cubic-bezier(0.28, 2.43, 0.58, 1);
-       -moz-transition: all 1s cubic-bezier(0.28, 2.43, 0.58, 1);
-        -ms-transition: all 1s cubic-bezier(0.28, 2.43, 0.58, 1);
-         -o-transition: all 1s cubic-bezier(0.28, 2.43, 0.58, 1);
-            transition: all 1s cubic-bezier(0.28, 2.43, 0.58, 1);
 }
 
 #see{
@@ -308,6 +302,10 @@ Projects
     margin: 0 auto;
     display: block;
     overflow: hidden;
+}
+
+.box.exBox{
+    float:none;
 }
 
 .box img{
@@ -449,6 +447,10 @@ About
 
 .fcc{
     background-color: #006400;
+}
+
+.codepen{
+    background-color: black;
 }
 
 /***************************************************************************
