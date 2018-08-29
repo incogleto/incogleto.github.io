@@ -1,5 +1,5 @@
 //Animate banner-text
-//$("#banner-text").addClass("load");
+$("#banner-text").addClass("load");
 
 //mobile nav
 $("#menuIcon").click(function(){
