@@ -9,7 +9,7 @@ $("#menuIcon").click(function(){
 //scrollspy
 $('a[href*=\\#]').on('click', function(event){
     event.preventDefault();
-    $('html,body').animate({scrollTop:$(thishash).offset().top-70}, 500);
+    $('html,body').animate({scrollTop:$(this.hash).offset().top-70}, 500);
 });
 
 //resize nav on scroll
